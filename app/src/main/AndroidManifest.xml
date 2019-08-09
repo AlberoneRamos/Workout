@@ -3,7 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.alberoneramos.workout">
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,40 +19,62 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity
-            android:name=".activities.HomescreenActivity"
+            android:name=".view.activity.MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
+        <activity
+            android:name=".view.activity.HomescreenActivity"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".activities.SplashActivity">
+        <activity android:name=".view.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.LogInActivity" />
-        <activity android:name=".activities.PINActivity" />
+        <activity android:name=".view.activity.LogInActivity" />
+        <activity android:name=".view.activity.PINActivity" />
         <activity
-            android:name=".activities.AddWorkoutActivity"
+            android:name=".view.activity.AddWorkoutActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Calendar"
             android:label="@string/title_activity_calendar"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".activities.WorkoutPlanShare">
-            <intent-filter android:autoVerify="true"
+        <activity android:name=".view.activity.WorkoutPlanShare">
+            <intent-filter
+                android:autoVerify="true"
                 tools:targetApi="23">
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="v8z88.app.goo.gl" android:scheme="https"/>
-                <data android:host="workout-a4d9c.firebaseio.com" android:scheme="http"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="v8z88.app.goo.gl"
+                    android:scheme="https" />
+                <data
+                    android:host="workout-a4d9c.firebaseio.com"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
     </application>

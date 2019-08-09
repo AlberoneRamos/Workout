@@ -13,7 +13,7 @@ public class WorkoutPlan implements Parcelable{
     private String name = "";
     private int colorId = 0;
 
-    public WorkoutPlan(String name, List<com.alberoneramos.workout.models.Exercise> exercises, int colorId, List<Integer> weekdays, String WorkoutPlanId) {
+    public WorkoutPlan(String name, List<Exercise> exercises, int colorId, List<Integer> weekdays, String WorkoutPlanId) {
         this.exercises = exercises;
         this.name = name;
         this.colorId = colorId;
@@ -21,8 +21,8 @@ public class WorkoutPlan implements Parcelable{
         this.workoutPlanId = WorkoutPlanId;
     }
 
-    public WorkoutPlan(Parcel workoutPlan){
-        workoutPlan.readList(this.exercises, com.alberoneramos.workout.models.Exercise.class.getClassLoader());
+    private WorkoutPlan(Parcel workoutPlan){
+        workoutPlan.readList(this.exercises, Exercise.class.getClassLoader());
         workoutPlan.readList(this.weekdays,Integer.class.getClassLoader());
         this.name = workoutPlan.readString();
         this.colorId = workoutPlan.readInt();
@@ -67,7 +67,7 @@ public class WorkoutPlan implements Parcelable{
         return exercises;
     }
 
-    public void setExercises(List<com.alberoneramos.workout.models.Exercise> exercises) {
+    public void setExercises(List<Exercise> exercises) {
         this.exercises = exercises;
     }
 
@@ -93,11 +93,11 @@ public class WorkoutPlan implements Parcelable{
         dest.writeString(this.workoutPlanId);
     }
 
-    public void editExercise(int position, com.alberoneramos.workout.models.Exercise exercise){
+    public void editExercise(int position, Exercise exercise){
         this.exercises.set(position,exercise);
     }
 
-    public void addExercise(com.alberoneramos.workout.models.Exercise exercise){
+    public void addExercise(Exercise exercise){
         this.exercises.add(exercise);
     }
 

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        tools:context=".view.activity.MapsActivity" />
+
+    <Button
+        android:onClick="onClick"
+        android:id="@+id/btn_fitness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/ic_fitness_center_black_24dp"
+        android:backgroundTint="@color/state_pressed_item"
+        android:clickable="true"
+        android:focusable="true"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/ic_clear_black_24dp"
+        android:backgroundTint="@color/state_pressed_item"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="onClick"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.0"
+        map:layout_constraintStart_toEndOf="@+id/btn_fitness"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:onClick="onClick"
+        android:id="@+id/btn_run"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/ic_directions_run_black_24dp"
+        android:backgroundTint="@color/state_pressed_item"
+        android:clickable="true"
+        android:focusable="true"
+        map:layout_constraintBottom_toBottomOf="@+id/btn_fitness"
+        map:layout_constraintEnd_toStartOf="@+id/btn_fitness"
+        map:layout_constraintHorizontal_bias="1.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="@+id/btn_fitness" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Squares"
+        android:textColor="@color/colorPrimary"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="@+id/btn_run"
+        map:layout_constraintStart_toStartOf="@+id/btn_run"
+        map:layout_constraintTop_toBottomOf="@+id/btn_run" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Gyms"
+        android:textColor="@color/colorPrimary"
+        map:layout_constraintBottom_toBottomOf="@+id/map"
+        map:layout_constraintEnd_toEndOf="@+id/btn_fitness"
+        map:layout_constraintStart_toStartOf="@+id/btn_fitness"
+        map:layout_constraintTop_toBottomOf="@+id/btn_fitness" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Clear"
+        android:textColor="@color/colorPrimaryDark"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="@+id/btn_clear"
+        map:layout_constraintStart_toStartOf="@+id/btn_clear"
+        map:layout_constraintTop_toBottomOf="@+id/btn_clear" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

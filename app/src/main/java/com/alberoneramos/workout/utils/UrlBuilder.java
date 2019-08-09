@@ -15,8 +15,6 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 public class UrlBuilder {
 
-
-
     public Uri buildWorkoutUrl(String workoutPlanId){
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("http").authority("workout-a4d9c.firebaseio.com")

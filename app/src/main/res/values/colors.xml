@@ -7,6 +7,7 @@
     <color name="blue">#22BBE0</color>
     <color name="deep_purple">#22E08A</color>
     <color name="pink">#E022AB</color>
+    <color name="white">#FFFFFF</color>
 
     <array name="defaultPaletteColor">
         <item>@color/colorPrimary</item>

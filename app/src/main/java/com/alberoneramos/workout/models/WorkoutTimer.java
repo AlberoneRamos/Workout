@@ -4,6 +4,6 @@ public enum WorkoutTimer {
     INSTANCE;
     private WorkoutPlan workoutPlan;
 
-    private WorkoutTimer() {
+    WorkoutTimer() {
     }
 }
